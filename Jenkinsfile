@@ -36,7 +36,7 @@ pipeline {
             steps {
                 script {
                     sh """
-                        echo "Installing dependencies"
+                        echo "Installing dependencies..."
                         npm install
                     """
                 }
