@@ -113,6 +113,7 @@ pipeline {
                     }
                 }
             }
+        }
         }stage('Trigger Deploy') {
             when{
                 expression { params.deploy }
