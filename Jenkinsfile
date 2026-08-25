@@ -1,6 +1,13 @@
 @Library('jenkins-shared-library') _
 
 def configMap = [
-    greeting : "Hello Jenkins"
+    project : "roboshop",
+    component: "catalogue"
 ]
-samplePipeline(configMap) // by default it will call the call function in the samplePipeline.groovy file in the vars directory of the shared library                                                                
+
+if( ! env.BRANCH_NAME.equalsIgnoreCase('main') ){ // if not equals to main
+    nodejsEKSPipeline(configMap) // by default it will call, call function inside this pipeline
+}
+else{
+    echo "Please proceed with PROD process"
+}
