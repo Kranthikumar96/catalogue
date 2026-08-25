@@ -26,7 +26,7 @@ pipeline {
     }
 
     stages {
-
+        
         stage('Read package.json') {
             steps {
                 script {
