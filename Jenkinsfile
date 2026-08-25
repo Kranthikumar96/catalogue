@@ -1,6 +1,6 @@
 @Library('jenkins-shared-library') _
 
 def configMap = [
-    greeting : "hello jenkins"
+    greeting : "Hello Jenkins"
 ]
-samplepipeline(configMap) // by default it will call the call function in the samplePipeline.groovy file in the vars directory of the shared library                                                                
+samplePipeline(configMap) // by default it will call the call function in the samplePipeline.groovy file in the vars directory of the shared library                                                                
