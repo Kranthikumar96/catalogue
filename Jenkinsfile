@@ -26,7 +26,7 @@ pipeline {
     }
 
     stages {
-        
+
         stage('Read package.json') {
             steps {
                 script {
@@ -57,6 +57,28 @@ pipeline {
                 }
             }
         }
+
+        /* stage('Sonar Scan') {
+            environment {
+                scannerHome = tool 'sonar-8.1'
+            }
+            steps {
+                script {
+                   // Sonar Server envrionment
+                   withSonarQubeEnv(installationName: 'sonar-8.1') {
+                         sh "${scannerHome}/bin/sonar-scanner"
+                   }
+                }
+            }
+        } */
+
+        // Enable webhook in sonarqube server and wait for results
+        /* stage("Quality Gate") {
+            steps {
+                timeout(time: 1, unit: 'HOURS') {
+                waitForQualityGate abortPipeline: true }
+            }
+        } */
 
         stage('Check Dependabot Alerts') {
             environment {
